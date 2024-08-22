@@ -26,6 +26,8 @@ sources:
   - rtl/interfaces/regmap/dwidth_converter_bram.sv
   - rtl/interfaces/regmap/rv_iopmp_subreg_arb.sv
   - rtl/interfaces/regmap/rv_iopmp_wsi_ig.sv
+  - rtl/interfaces/latch_mem/latch_mem.sv
+  - rtl/interfaces/latch_mem/tc_sram_latch.sv
   # Level 1
   - packages/rv_iopmp/rv_iopmp_pkg.sv
   # Level 2
