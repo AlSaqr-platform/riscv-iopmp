@@ -37,16 +37,12 @@ module tc_sram_latch #(
 
    logic [AddrWidth-1:0] radd_a, radd_b, wadd_a, wadd_b;
 
-   latch_mem #(
-     .NUM_WORDS  ( NumWords   ),
+   register_file_2r_2w #(
      .ADDR_WIDTH ( AddrWidth  ),
-     .DATA_WIDTH ( DataWidth  ),
-     .FPU        ( 0          ),
-     .Zfinx      ( 0          )
+     .DATA_WIDTH ( DataWidth  )
    ) u_latch_mem (
      .clk        ( clk_i      ),
      .rst_n      ( rst_ni     ),
-     .test_en_i  ( 1'b0       ),
      // Port A
      .waddr_a_i  ( wadd_a     ),
      .wdata_a_i  ( wdata_i[0] ),
@@ -60,6 +56,7 @@ module tc_sram_latch #(
      .raddr_b_i  ( radd_b     ),
      .rdata_b_o  ( rdata_o[1] )
    );
+
    always_comb begin
      wadd_a = '0;
      wadd_b = '0;
@@ -79,25 +76,4 @@ module tc_sram_latch #(
      end
    end
 
-/*   always_comb begin
-      if(we_i[0])
-        wadd_a <= addr_i[0];
-   end
-
-   always_comb begin
-      if(we_i[1])
-        wadd_b <= addr_i[1];
-   end
-
-   always_comb begin
-      if(~we_i[0])
-        radd_a <= addr_i[0];
-   end
-
-   always_comb begin
-      if(~we_i[1])
-        radd_b <= addr_i[1];
-   end
-
-*/
 endmodule
