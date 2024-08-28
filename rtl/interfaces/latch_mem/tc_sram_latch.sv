@@ -35,7 +35,7 @@ module tc_sram_latch #(
    output data_t [1:0] rdata_o     // read data
 );
 
-   logic [AddrWidth-1:0] radd_a, radd_b, wadd_a, wadd_b;
+   //logic [AddrWidth-1:0] radd_a, radd_b, wadd_a, wadd_b;
 
    register_file_2r_2w #(
      .ADDR_WIDTH ( AddrWidth  ),
@@ -44,19 +44,19 @@ module tc_sram_latch #(
      .clk        ( clk_i      ),
      .rst_n      ( rst_ni     ),
      // Port A
-     .waddr_a_i  ( wadd_a     ),
+     .waddr_a_i  ( addr_i[0]  ),
      .wdata_a_i  ( wdata_i[0] ),
      .we_a_i     ( we_i[0]    ),
-     .raddr_a_i  ( radd_a     ),
+     .raddr_a_i  ( addr_i[0]  ),
      .rdata_a_o  ( rdata_o[0] ),
      // Port B
-     .waddr_b_i  ( wadd_b     ),
+     .waddr_b_i  ( addr_i[1]  ),
      .wdata_b_i  ( wdata_i[1] ),
      .we_b_i     ( we_i[1]    ),
-     .raddr_b_i  ( radd_b     ),
+     .raddr_b_i  ( addr_i[1]  ),
      .rdata_b_o  ( rdata_o[1] )
    );
-
+/*
    always_comb begin
      wadd_a = '0;
      wadd_b = '0;
@@ -75,5 +75,5 @@ module tc_sram_latch #(
        radd_b = addr_i[1];
      end
    end
-
+*/
 endmodule
