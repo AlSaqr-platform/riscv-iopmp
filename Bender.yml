@@ -14,6 +14,7 @@ dependencies:
   axi: { git: "https://github.com/pulp-platform/axi.git", version: 0.39.1-beta }
   register_interface: { git: "git@github.com:AlSaqr-platform/register_interface.git", version:  0.3.2 }
   tech_cells_generic: { git: "https://github.com/pulp-platform/tech_cells_generic.git", version:  0.2.9 }
+  scm:                { git: "git@github.com:pulp-platform/scm.git", rev: "998466d2a" }
 
 sources:
   # Source files grouped in levels. Files in level 0 have no dependencies on files in this
@@ -26,6 +27,7 @@ sources:
   - rtl/interfaces/regmap/dwidth_converter_bram.sv
   - rtl/interfaces/regmap/rv_iopmp_subreg_arb.sv
   - rtl/interfaces/regmap/rv_iopmp_wsi_ig.sv
+  - rtl/interfaces/latch_mem/tc_sram_latch.sv
   # Level 1
   - packages/rv_iopmp/rv_iopmp_pkg.sv
   # Level 2

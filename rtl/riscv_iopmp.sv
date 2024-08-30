@@ -211,10 +211,9 @@ assign entry_array_be[1]  = '1;
 
 // port0 -> regmap_wrapper
 // port1 -> matching_logic
-tc_sram #(
+tc_sram_latch #(
   .NumWords(NUMBER_ENTRIES), // Number of Words in data array
-  .DataWidth(32'd128),  // Data signal width
-  .NumPorts(32'd2)    // Number of read and write ports
+  .DataWidth(32'd128) // Data signal width
 ) i_entry_ram (
     .clk_i(clk_i),      // Clock
     .rst_ni(rst_ni),     // Asynchronous reset active low
