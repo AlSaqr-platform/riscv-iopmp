@@ -33,7 +33,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-module register_file_2r_2w
+module rf_latch_2w_2r
 #(
     parameter ADDR_WIDTH    = 5,
     parameter DATA_WIDTH    = 32
@@ -65,8 +65,8 @@ module register_file_2r_2w
     localparam    NUM_WORDS = 2**ADDR_WIDTH;
 
     // Read address register, located at the input of the address decoder
-    logic [ADDR_WIDTH-1:0]                         RAddrRegxDPa;
-    logic [ADDR_WIDTH-1:0]                         RAddrRegxDPb;
+    logic [ADDR_WIDTH-1:0]                         RAddrRegxDPa; 
+    logic [ADDR_WIDTH-1:0]                         RAddrRegxDPb; 
     logic [NUM_WORDS-1:0]                          RAddrOneHotxD;
 
 

@@ -37,7 +37,7 @@ module tc_sram_latch #(
 
    //logic [AddrWidth-1:0] radd_a, radd_b, wadd_a, wadd_b;
 
-   register_file_2r_2w #(
+   rf_latch_2w_2r #(
      .ADDR_WIDTH ( AddrWidth  ),
      .DATA_WIDTH ( DataWidth  )
    ) u_latch_mem (
