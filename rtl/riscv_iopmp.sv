@@ -70,7 +70,9 @@ module riscv_iopmp #(
     output  axi_req_t initiator_req_o,
     input   axi_rsp_t initiator_rsp_i,
 
-    output logic  wsi_wire_o
+    output logic  wsi_wire_o,
+
+    input logic [127:0] iopmp_lock_xor_key_i
 );
 
 localparam int unsigned NumberMds = NUMBER_MDS;
